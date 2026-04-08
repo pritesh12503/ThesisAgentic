@@ -1,0 +1,47 @@
+DOCUMENT: PUDUCHERRY UT AGRICULTURAL POLICY 2024-25
+STATE: Puducherry
+TYPE: Union Territory with Legislature
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: Puducherry has DCP for rice. High procurement efficiency for a small UT.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 60
+  effective_msp_per_kg: 23.00
+  note: Puducherry Civil Supplies department actively procures paddy at MSP.
+
+Groundnut: Important commercial crop in Puducherry.
+  procurement_efficiency_pct: 20
+  effective_msp_per_kg: 65.82
+
+Sugarcane: Limited area. Mill procurement at FRP.
+  effective_msp_per_kg: 3.40
+
+================================================================================
+SECTION 2: PUDUCHERRY STATE-SPECIFIC SCHEMES
+================================================================================
+Puducherry Agricultural Income Support Scheme:
+  Direct income support for agricultural families
+  Rs 6000 per year (equivalent to PM-KISAN, implemented as combined benefit)
+
+Free electricity for agricultural pump sets:
+  Puducherry provides free electricity for agricultural pumps
+  power_subsidy_per_ha: 6000 (full electricity subsidy — very significant benefit)
+
+Krishi Vigyan Kendra: active in Puducherry providing technical support.
+
+PM-KISAN: Rs 2000/season — implemented.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active in Puducherry with good implementation.
+pmfby_state_reliability: good
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 6000 (full free electricity for agricultural pumps)
+Free seeds and fertilizers provided through Puducherry Agriculture Department for small farmers.

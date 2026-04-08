@@ -1,0 +1,45 @@
+DOCUMENT: MEGHALAYA STATE AGRICULTURAL POLICY 2024-25
+STATE: Meghalaya
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: Limited procurement. Subsistence farming dominates.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 10
+  effective_msp_per_kg: 23.00
+
+Maize: Important food crop. Limited procurement.
+  procurement_efficiency_pct: 8
+
+Ginger: Meghalaya is India's largest ginger-producing state. No MSP.
+  note: Meghalaya ginger is premium quality. Market-driven price. State promotes GI tag.
+
+Turmeric: Important commercial crop. No MSP.
+  note: Market-driven. Meghalaya turmeric commands premium in domestic and export markets.
+
+================================================================================
+SECTION 2: MEGHALAYA STATE-SPECIFIC SCHEMES
+================================================================================
+Chief Minister's Comprehensive Farming Scheme (CMCFS):
+  Input assistance for small hill farmers
+  Seeds, fertilizers at subsidized rates
+
+Meghalaya Organic Mission:
+  Promotes organic certification for ginger, turmeric, and vegetables
+  Premium market linkage for organic-certified produce
+
+PM-KISAN: Rs 2000/season — implemented.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active in Meghalaya. Limited coverage in very remote areas.
+pmfby_state_reliability: moderate
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 1500
+NE special agricultural development package applies.

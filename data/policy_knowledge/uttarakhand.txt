@@ -1,0 +1,47 @@
+DOCUMENT: UTTARAKHAND STATE AGRICULTURAL POLICY 2024-25
+STATE: Uttarakhand
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Wheat: Uttarakhand procures wheat. Moderate efficiency.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 30
+  effective_msp_per_kg: 21.75
+
+Rice: Limited hill terrain, limited procurement.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 20
+  effective_msp_per_kg: 23.00
+
+Mandua (Finger Millet / Ragi): Important hill crop in Uttarakhand.
+  note: State promotes Mandua as nutri-cereal. Support price aligned with central MSP for Ragi.
+  procurement_efficiency_pct: 15
+
+================================================================================
+SECTION 2: UTTARAKHAND STATE-SPECIFIC SCHEMES
+================================================================================
+Mukhyamantri Krishak Sashaktikaran Yojana:
+  Financial assistance for small hill farmers
+  Input subsidy and agricultural equipment support
+
+Parvatiya Kisan Puruskar: award and incentive for hill farmers adopting organic farming.
+
+Uttarakhand Organic Farming Policy:
+  State promotes organic certification for hill crops (apples, herbs, spices, rice)
+  Organic certified produce typically commands 20-40% premium in market
+
+PM-KISAN: Rs 2000/season — implemented.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active but limited in hill areas due to terrain.
+pmfby_state_reliability: moderate
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 2000
+Seed subsidy for hill varieties. NHM (National Horticulture Mission) funds for apple, peach, plum.

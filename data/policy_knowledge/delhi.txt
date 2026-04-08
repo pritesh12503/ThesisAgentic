@@ -1,0 +1,39 @@
+DOCUMENT: DELHI UT AGRICULTURAL POLICY 2024-25
+STATE: Delhi
+TYPE: National Capital Territory with Legislature
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Note: Delhi has very limited agricultural land. Most farming is peri-urban vegetable growing.
+Wheat and rice grown in small patches. No separate state procurement.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 10
+  effective_msp_per_kg: 23.00
+  note: Effectively uses central MSP. Farmers sell in local vegetable markets. Very limited.
+
+Vegetables: Major activity. No MSP. Premium prices due to proximity to city.
+  note: Delhi peri-urban farmers grow vegetables (tomato, spinach, brinjal) for direct city market.
+  Market proximity premium: 10-20% above national average due to direct city retail.
+
+================================================================================
+SECTION 2: DELHI STATE-SPECIFIC SCHEMES
+================================================================================
+Delhi Mukhyamantri Kisaan Vikas Yojana:
+  Support for remaining agricultural land holders
+  Focus on urban/peri-urban organic farming
+
+PM-KISAN: Rs 2000/season — implemented for registered farmers.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active for limited agricultural land in Delhi.
+pmfby_state_reliability: good
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 2000
+Free or subsidized water from Delhi Jal Board for agricultural use in designated areas.

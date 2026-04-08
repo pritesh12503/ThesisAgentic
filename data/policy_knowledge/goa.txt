@@ -1,0 +1,41 @@
+DOCUMENT: GOA STATE AGRICULTURAL POLICY 2024-25
+STATE: Goa
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: Goa is a small agricultural state. Limited procurement.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 20
+  effective_msp_per_kg: 23.00
+
+Cashew: Goa is a major cashew state. No central MSP for cashew.
+  note: Market-driven price. Goa government monitors cashew market but no fixed floor price.
+
+Coconut: No central MSP for fresh coconut. Copra MSP Rs 111.60/kg.
+  procurement_efficiency_pct: 5
+
+================================================================================
+SECTION 2: GOA STATE-SPECIFIC SCHEMES
+================================================================================
+Goa Agriculture Development Corporation (GADCORP):
+  Provides seeds, fertilizers, and implements at subsidized rates to farmers
+
+Goa Horticulture Corporation:
+  Procures fruits and vegetables directly from farmers
+  Runs farmer markets (Goa Krishidar) eliminating middlemen
+
+PM-KISAN: Rs 2000/season — implemented.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active in Goa.
+pmfby_state_reliability: good
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 2000
+Subsidized fertilizers through GADCORP.

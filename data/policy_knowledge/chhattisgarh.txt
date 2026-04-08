@@ -1,0 +1,42 @@
+DOCUMENT: CHHATTISGARH STATE AGRICULTURAL POLICY 2024-25
+STATE: Chhattisgarh
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: Chhattisgarh is a leading DCP state — nearly all paddy reaches MSP system.
+  state_bonus_per_kg: 3.00
+  procurement_efficiency_pct: 85
+  effective_msp_per_kg: 26.00
+  note: Chhattisgarh pays Rs 300/quintal bonus over central MSP for paddy.
+  source: Chhattisgarh State Civil Supplies Corporation procurement norms 2024-25.
+
+Maize: Limited MSP procurement.
+  procurement_efficiency_pct: 15
+  effective_msp_per_kg: 22.25
+
+================================================================================
+SECTION 2: CHHATTISGARH STATE-SPECIFIC SCHEMES
+================================================================================
+Rajiv Gandhi Kisaan Nyay Yojana (RGKNY):
+  Direct income support Rs 9000 per acre per year for paddy growers
+  Rs 2250 per acre per season
+  rgkny_per_ha_per_season: 5562
+  additional_income_support_per_season: 5562
+
+For non-paddy kharif crops: Rs 4000 per acre per year (Rs 1000/season)
+  non_paddy_support_per_ha_per_season: 2471
+
+PM-KISAN: Rs 2000/season — in addition to RGKNY.
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active. Chhattisgarh pays state share.
+pmfby_state_reliability: good
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 2500
+Seed subsidies for tribal farmers under TRIFED linkage.

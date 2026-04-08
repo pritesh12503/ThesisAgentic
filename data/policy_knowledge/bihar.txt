@@ -1,0 +1,48 @@
+DOCUMENT: BIHAR STATE AGRICULTURAL POLICY 2024-25
+STATE: Bihar
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Wheat: Bihar procurement is improving but still below Punjab/Haryana.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 20
+  effective_msp_per_kg: 21.75
+
+Rice: Low procurement efficiency.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 12
+  effective_msp_per_kg: 23.00
+  note: Bihar rice — most sold in open market. Limited FCI procurement infrastructure.
+
+Maize: Bihar is major maize state but low procurement.
+  procurement_efficiency_pct: 10
+  effective_msp_per_kg: 22.25
+
+Arhar/Tur: Very low procurement.
+  procurement_efficiency_pct: 5
+  effective_msp_per_kg: 70.00
+
+================================================================================
+SECTION 2: BIHAR STATE-SPECIFIC SCHEMES
+================================================================================
+Bihar Krishi Input Anudan (Input subsidy):
+  Crop loss compensation after natural disasters: Rs 8500/ha irrigated, Rs 6800/ha rain-fed
+  Not a regular income support scheme.
+
+PM-KISAN: Rs 2000/season — implemented but with some registration delays.
+additional_income_support_per_season: 0
+
+Mukhyamantri Kisan Sahayata Yojana: Emergency assistance for crop damage.
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active. Bihar has had some delays in state premium payment.
+pmfby_state_reliability: moderate
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 2000
+Fertilizer: national DBT subsidy.

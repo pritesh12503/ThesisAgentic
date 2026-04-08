@@ -1,0 +1,51 @@
+DOCUMENT: TELANGANA STATE AGRICULTURAL POLICY 2024-25
+STATE: Telangana
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice (A-grade fine variety): Telangana offers Rs 500/quintal bonus over central MSP.
+  state_bonus_per_kg: 5.00
+  procurement_efficiency_pct: 80
+  effective_msp_per_kg: 28.00
+  note: Rs 500/quintal bonus for fine rice varieties. Common variety: standard central MSP only.
+  source: Telangana Civil Supplies Corporation, Kharif 2024-25.
+
+Maize: State procurement under PM-AASHA.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 30
+  effective_msp_per_kg: 22.25
+
+Cotton: CCI procurement active.
+  procurement_efficiency_pct: 40
+  effective_msp_per_kg: 70.21
+
+Arhar/Tur: NAFED procurement active. 100% procurement under Budget 2025.
+  procurement_efficiency_pct: 35
+  effective_msp_per_kg: 70.00
+
+================================================================================
+SECTION 2: TELANGANA STATE-SPECIFIC SCHEMES
+================================================================================
+Rythu Bandhu (Farmer Investment Support):
+  Rs 5000 per acre per season (Rs 12500 per hectare) paid directly to farmers
+  Applies to all crops, both seasons
+  rythu_bandhu_per_ha_per_season: 12500
+
+Rythu Bima (Farmer Life Insurance):
+  Free life insurance Rs 5 lakh for all farmers aged 18-59 years
+  Premium fully paid by Telangana state government
+
+PM-KISAN: Rs 2000/season — in addition to Rythu Bandhu.
+additional_income_support_per_season: 12500
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY implemented. Telangana pays state share.
+pmfby_state_reliability: good
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 5000 (free electricity for agricultural pumps)

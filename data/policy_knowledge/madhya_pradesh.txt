@@ -1,0 +1,56 @@
+DOCUMENT: MADHYA PRADESH STATE AGRICULTURAL POLICY 2024-25
+STATE: Madhya Pradesh
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Wheat: MP is 2nd largest wheat-procuring state after Punjab.
+  state_bonus_per_kg: 2.00
+  procurement_efficiency_pct: 75
+  effective_msp_per_kg: 23.75
+  note: MP typically pays Rs 200/quintal bonus on wheat procurement.
+
+Rice: MP has strong DCP (Decentralized Procurement) system.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 65
+  effective_msp_per_kg: 23.00
+
+Gram (Chickpea): NAFED procurement active. MP is largest chickpea state.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 35
+  effective_msp_per_kg: 54.40
+
+Soyabean: Central MSP Rs 49.92/kg. NAFED active.
+  procurement_efficiency_pct: 25
+  effective_msp_per_kg: 49.92
+
+Masoor (Lentil): NAFED procurement active.
+  procurement_efficiency_pct: 20
+  effective_msp_per_kg: 61.00
+
+================================================================================
+SECTION 2: MADHYA PRADESH STATE-SPECIFIC SCHEMES
+================================================================================
+Mukhyamantri Krishak Samridhi Yojana:
+  Bonus incentive for farmers selling at MSP procurement centres
+  Additional Rs 265/quintal for wheat sold to government procurement
+
+Bhavantar Bhugtan Yojana (Price Deficiency Payment):
+  For crops where market price falls below MSP
+  Government pays the difference directly to farmer's bank account
+  Active for: soyabean, onion, garlic, groundnut, arhar
+
+PM-KISAN: Rs 2000/season — fully implemented.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+Standard PMFBY. MP is a large PMFBY-implementing state.
+pmfby_state_reliability: good
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 3000
+Fertilizer: national DBT subsidy. MP provides additional seed subsidy for pulses.

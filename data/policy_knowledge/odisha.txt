@@ -1,0 +1,44 @@
+DOCUMENT: ODISHA STATE AGRICULTURAL POLICY 2024-25
+STATE: Odisha
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: Odisha has strong DCP (Decentralized Procurement) system. High procurement state.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 70
+  effective_msp_per_kg: 23.00
+  note: Odisha is a leading DCP state. Most paddy farmers can access MSP procurement.
+
+Arhar/Tur: NAFED procurement. 100% guarantee under Budget 2025.
+  procurement_efficiency_pct: 25
+  effective_msp_per_kg: 70.00
+
+Groundnut: NAFED procurement.
+  procurement_efficiency_pct: 15
+  effective_msp_per_kg: 65.82
+
+================================================================================
+SECTION 2: ODISHA STATE-SPECIFIC SCHEMES
+================================================================================
+KALIA (Krushak Assistance for Livelihood and Income Augmentation):
+  Rs 10000 per year per farmer family (Rs 5000/season) for small/marginal farmers
+  Additional Rs 2000 per year for vulnerable landless agricultural households
+  kalia_per_ha_per_season: 5000
+  additional_income_support_per_season: 3000 (KALIA portion above PM-KISAN)
+
+Biju Swasthya Kalyan Yojana: free health insurance Rs 5 lakh for farmer families.
+
+PM-KISAN: Rs 2000/season — implemented. KALIA is in addition to PM-KISAN.
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active in Odisha. State pays its share.
+pmfby_state_reliability: good
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 2500
+Subsidized seeds through Odisha Agro Industries Corporation.

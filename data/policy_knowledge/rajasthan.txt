@@ -1,0 +1,52 @@
+DOCUMENT: RAJASTHAN STATE AGRICULTURAL POLICY 2024-25
+STATE: Rajasthan
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Mustard/Rapeseed: Rajasthan is India's largest mustard producer. NAFED active.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 30
+  effective_msp_per_kg: 57.50
+  note: PM-AASHA procurement triggered when mustard market price falls below MSP.
+
+Gram (Chickpea): Rajasthan is major gram producer. NAFED procurement.
+  procurement_efficiency_pct: 25
+  effective_msp_per_kg: 54.40
+
+Bajra: Central MSP Rs 25.25/kg.
+  procurement_efficiency_pct: 20
+  effective_msp_per_kg: 25.25
+
+Wheat: Rajasthan wheat — limited procurement.
+  procurement_efficiency_pct: 30
+  effective_msp_per_kg: 21.75
+
+Groundnut: NAFED procurement.
+  procurement_efficiency_pct: 20
+  effective_msp_per_kg: 65.82
+
+================================================================================
+SECTION 2: RAJASTHAN STATE-SPECIFIC SCHEMES
+================================================================================
+Rajasthan Krishak Sathi Yojana:
+  Accident/death compensation for farmers: Rs 5000-50000 based on injury type
+  Not a direct income support.
+
+PM-KISAN: Rs 2000/season — implemented.
+additional_income_support_per_season: 0
+
+Bhavantar Bhugtan Yojana (Rajasthan version):
+  Price deficiency payment for horticulture crops when market price falls below support price.
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+Standard PMFBY. Rajasthan pays state share.
+pmfby_state_reliability: moderate
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 3000 (subsidized power for agricultural pumps)
+Drip irrigation subsidy: 75% for small/marginal farmers in water-scarce zones.

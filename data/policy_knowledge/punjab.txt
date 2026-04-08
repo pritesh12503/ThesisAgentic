@@ -1,0 +1,57 @@
+DOCUMENT: PUNJAB STATE AGRICULTURAL POLICY 2024-25
+STATE: Punjab
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Punjab does not pay additional state bonus over central MSP for most crops.
+However, Punjab has near-100% procurement efficiency — nearly all MSP-covered
+crop production reaches the government procurement system.
+
+Rice: No state bonus. Central MSP Rs 23.00/kg applies.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 92
+  effective_msp_per_kg: 23.00
+
+Wheat: No state bonus. Central MSP Rs 21.75/kg applies.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 95
+  effective_msp_per_kg: 21.75
+
+Maize: No state bonus. Low procurement in Punjab.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 15
+  effective_msp_per_kg: 22.25
+
+================================================================================
+SECTION 2: PUNJAB STATE-SPECIFIC SCHEMES
+================================================================================
+Punjab Diversification Scheme:
+  Rs 7000 per acre paid to farmers who shift from paddy to maize, bajra, pulses or cotton
+  Condition: must use more than 50% of paddy area (as per 2019-20 sown area) for other crops
+  Purpose: reduce water table depletion caused by paddy cultivation
+
+PM-KISAN: Rs 2000/season (national scheme, fully implemented in Punjab)
+
+Debt relief: Punjab Farm Loan Waiver Scheme — partial waiver for small/marginal farmers
+  up to 2 acres, loan waiver of Rs 2 lakh per farmer (2017-18 scheme, check current status)
+
+================================================================================
+SECTION 3: PMFBY INSURANCE
+================================================================================
+Punjab implements PMFBY. Farmer premium: 2% Kharif, 1.5% Rabi (national rates apply).
+Punjab pays its 50% share of insurance premium subsidy on time (high implementation state).
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+Fertilizer subsidy: national DBT subsidy applies (neem-coated urea, DAP, MOP)
+Power subsidy: free electricity for agricultural pumps in Punjab (significant input cost saving)
+  Estimated value: Rs 4000-6000 per hectare per season for irrigated crops
+  power_subsidy_per_ha: 5000
+
+================================================================================
+SECTION 5: KCC CROP LOAN
+================================================================================
+Kisan Credit Card: crop loans at 4% subsidized interest rate (with timely repayment)
+Average KCC loan per hectare: Rs 40000 for rice, Rs 35000 for wheat

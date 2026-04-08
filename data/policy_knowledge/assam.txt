@@ -1,0 +1,50 @@
+DOCUMENT: ASSAM STATE AGRICULTURAL POLICY 2024-25
+STATE: Assam
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: Assam procures paddy. State bonus announced from April 2025.
+  state_bonus_per_kg: 1.50
+  procurement_efficiency_pct: 35
+  effective_msp_per_kg: 24.50
+  note: Assam government announced state bonus for rice and mustard from April 1, 2025.
+  source: Assam Tribune 2025 — additional bonus will increase over time, CM stated.
+
+Mustard (Rapeseed): Assam announced state bonus for mustard from April 2025.
+  state_bonus_per_kg: 1.00
+  procurement_efficiency_pct: 20
+  effective_msp_per_kg: 58.50
+
+Tea: No MSP. Assam is world's largest tea-producing region. Market-driven prices.
+  note: Tea Board of India monitors minimum wages and labour practices but no MSP for tea leaves.
+
+Jute: JCI procurement active. Assam is major jute state.
+  procurement_efficiency_pct: 25
+  effective_msp_per_kg: 53.35
+
+================================================================================
+SECTION 2: ASSAM STATE-SPECIFIC SCHEMES
+================================================================================
+Mukhyamantri Krishi Sa-Sujala Scheme:
+  Free drip and sprinkler irrigation equipment for small farmers
+
+Asom Mala (road development) improves market access for farmers in remote areas.
+
+Assam Agri-Infrastructure Scheme:
+  Cold storage and warehouse subsidy for horticulture farmers
+
+PM-KISAN: Rs 2000/season — implemented.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active in Assam. State pays its share.
+pmfby_state_reliability: moderate
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 2000
+Seed subsidy through Assam Seed Corporation for rice and mustard.

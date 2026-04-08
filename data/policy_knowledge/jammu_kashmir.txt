@@ -1,0 +1,49 @@
+DOCUMENT: JAMMU AND KASHMIR UT AGRICULTURAL POLICY 2024-25
+STATE: Jammu and Kashmir
+TYPE: Union Territory with Legislature
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice (Basmati): J&K grows premium Basmati. No separate MSP — central MSP applies.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 25
+  effective_msp_per_kg: 23.00
+  note: Basmati from J&K commands premium market price (Rs 35-80/kg) above central MSP.
+
+Maize: Important Kharif crop in Jammu division.
+  procurement_efficiency_pct: 15
+  effective_msp_per_kg: 22.25
+
+Apple: J&K is India's second largest apple producer after HP. No MSP.
+  note: Apple is largest horticultural crop. Market-driven price. J&K earns significant revenue from apple exports.
+
+Saffron: Pampore, J&K produces world's premium saffron. No MSP.
+  note: GI tag awarded. Price Rs 250,000-500,000/kg. Spices Board monitors quality.
+
+================================================================================
+SECTION 2: J&K UT-SPECIFIC SCHEMES
+================================================================================
+Holistic Agriculture Development Programme (HADP):
+  Rs 5000 crore investment over 5 years for J&K agriculture transformation
+  Direct farmer benefits: mechanization, cold chain, market linkage
+
+J&K Kisan Card: Zero percent interest crop loans for registered farmers.
+
+Back to Village Programme: agricultural extension services to remote villages.
+
+PM-KISAN: Rs 2000/season — fully implemented in J&K.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active in J&K (both Jammu and Kashmir divisions).
+pmfby_state_reliability: good
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 3000
+Seed subsidy through SKUAST (Sher-e-Kashmir University of Agricultural Sciences).
+NHM support for apple, walnut, almond orchards.

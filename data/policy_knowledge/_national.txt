@@ -1,0 +1,323 @@
+DOCUMENT: NATIONAL AGRICULTURAL POLICY INDIA 2024-25
+SOURCE: Cabinet Committee on Economic Affairs, Ministry of Agriculture and Farmers Welfare
+SCOPE: Applies to all states unless overridden by state-specific document
+
+================================================================================
+SECTION 1: CENTRAL MINIMUM SUPPORT PRICE (MSP) 2024-25
+================================================================================
+MSP is the guaranteed floor price. If market price < MSP, sell via FCI/NAFED procurement.
+Procurement under PM-AASHA when market price falls below MSP.
+
+CROP: Rice (Paddy Common)
+  msp_per_kg: 23.00
+  msp_per_quintal: 2300
+  season: Kharif
+  procurement_agency: FCI and State Civil Supplies Corporation
+
+CROP: Rice (Paddy Grade A)
+  msp_per_kg: 23.20
+  msp_per_quintal: 2320
+  season: Kharif
+  procurement_agency: FCI
+
+CROP: Wheat
+  msp_per_kg: 21.75
+  msp_per_quintal: 2175
+  season: Rabi
+  procurement_agency: FCI
+
+CROP: Maize
+  msp_per_kg: 22.25
+  msp_per_quintal: 2225
+  season: Kharif and Rabi
+  procurement_agency: NAFED under PM-AASHA when price falls below MSP
+
+CROP: Jowar (Hybrid)
+  msp_per_kg: 33.71
+  msp_per_quintal: 3371
+  season: Kharif
+  procurement_agency: NAFED
+
+CROP: Jowar (Maldandi)
+  msp_per_kg: 33.61
+  msp_per_quintal: 3361
+  season: Kharif
+
+CROP: Bajra (Pearl Millet)
+  msp_per_kg: 25.25
+  msp_per_quintal: 2525
+  season: Kharif
+
+CROP: Ragi (Finger Millet)
+  msp_per_kg: 40.29
+  msp_per_quintal: 4029
+  season: Kharif
+
+CROP: Barley (Jau)
+  msp_per_kg: 18.35
+  msp_per_quintal: 1835
+  season: Rabi
+
+CROP: Arhar/Tur (Pigeon Pea)
+  msp_per_kg: 70.00
+  msp_per_quintal: 7000
+  season: Kharif
+  procurement_agency: NAFED and NCCF under PM-AASHA
+  special: 100% procurement guarantee announced Budget 2025 up to 2028-29
+
+CROP: Moong (Green Gram)
+  msp_per_kg: 86.82
+  msp_per_quintal: 8682
+  season: Kharif
+
+CROP: Urad (Black Gram)
+  msp_per_kg: 71.00
+  msp_per_quintal: 7100
+  season: Kharif
+
+CROP: Gram (Chickpea/Chana)
+  msp_per_kg: 54.40
+  msp_per_quintal: 5440
+  season: Rabi
+  procurement_agency: NAFED under PM-AASHA
+
+CROP: Masoor (Lentil)
+  msp_per_kg: 61.00
+  msp_per_quintal: 6100
+  season: Rabi
+
+CROP: Cowpea
+  msp_per_kg: 0
+  note: No central MSP. Market price only.
+
+CROP: Groundnut
+  msp_per_kg: 65.82
+  msp_per_quintal: 6582
+  season: Kharif
+  procurement_agency: NAFED under PM-AASHA
+
+CROP: Rapeseed and Mustard
+  msp_per_kg: 57.50
+  msp_per_quintal: 5750
+  season: Rabi
+  procurement_agency: NAFED
+
+CROP: Sunflower
+  msp_per_kg: 70.80
+  msp_per_quintal: 7080
+  season: Kharif
+
+CROP: Soyabean (Yellow)
+  msp_per_kg: 49.92
+  msp_per_quintal: 4992
+  season: Kharif
+
+CROP: Sesamum (Sesame/Til)
+  msp_per_kg: 90.97
+  msp_per_quintal: 9097
+  season: Kharif
+
+CROP: Linseed
+  msp_per_kg: 57.00
+  msp_per_quintal: 5700
+  season: Rabi
+
+CROP: Safflower
+  msp_per_kg: 58.00
+  msp_per_quintal: 5800
+  season: Rabi
+
+CROP: Castor Seed
+  msp_per_kg: 0
+  note: No central MSP. Market price only.
+
+CROP: Cotton Medium Staple (lint)
+  msp_per_kg: 70.21
+  msp_per_quintal: 7021
+  season: Kharif
+  procurement_agency: Cotton Corporation of India (CCI)
+
+CROP: Cotton Long Staple (lint)
+  msp_per_kg: 74.21
+  msp_per_quintal: 7421
+  season: Kharif
+
+CROP: Sugarcane
+  frp_per_kg: 3.40
+  frp_per_quintal: 340
+  note: Fair and Remunerative Price (FRP), not MSP. Set by CCEA. Paid by sugar mills.
+  season: Annual
+
+CROP: Jute
+  msp_per_kg: 53.35
+  msp_per_quintal: 5335
+  season: Kharif
+  procurement_agency: Jute Corporation of India (JCI)
+
+CROP: Tobacco
+  msp_per_kg: 0
+  note: No central MSP. Auction platform prices by Tobacco Board.
+
+CROP: Coconut (Copra - Milling)
+  msp_per_kg: 111.60
+  msp_per_quintal: 11160
+  note: MSP for processed copra, not fresh coconut.
+
+CROP: Arecanut
+  msp_per_kg: 0
+  note: No central MSP. Market price only.
+
+CROP: Coffee
+  msp_per_kg: 0
+  note: No central MSP. Coffee Board sets floor prices for robusta and arabica separately.
+
+CROP: Black Pepper
+  msp_per_kg: 0
+  note: No central MSP. Spices Board market price.
+
+CROP: Potato
+  msp_per_kg: 0
+  note: No central MSP. Highly volatile market-driven price.
+
+CROP: Onion
+  msp_per_kg: 0
+  note: No central MSP. Highly volatile. Government intervenes via NAFED buffer stock.
+
+CROP: Tomato
+  msp_per_kg: 0
+  note: No central MSP. Perishable, market-only.
+
+CROP: Brinjal
+  msp_per_kg: 0
+  note: No central MSP. Market-only.
+
+CROP: Cabbage
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Cauliflower
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Garlic
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Ginger
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Turmeric
+  msp_per_kg: 0
+  note: No central MSP. Spices Board market price.
+
+CROP: Tapioca
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Sweet Potato
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Bitter Gourd
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Bottle Gourd
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Pumpkin
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Banana
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Mango
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Grapes
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Papaya
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Orange
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Pineapple
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Guava
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Lemon
+  msp_per_kg: 0
+  note: No central MSP.
+
+CROP: Apple
+  msp_per_kg: 0
+  note: No central MSP.
+
+================================================================================
+SECTION 2: PMFBY CROP INSURANCE — FARMER PREMIUM RATES
+================================================================================
+Pradhan Mantri Fasal Bima Yojana (PMFBY). Farmer pays capped premium.
+Government (Centre + State) subsidises the balance of actuarial premium.
+
+Kharif food crops and oilseeds: farmer premium = 2% of sum insured
+Rabi food crops and oilseeds:   farmer premium = 1.5% of sum insured
+Commercial and horticultural crops: farmer premium = 5% of sum insured
+
+Sum insured is typically equal to Scale of Finance (crop loan amount per hectare).
+Average sum insured per hectare: Rs 25,000 to Rs 45,000 depending on crop and state.
+
+Kharif crops (2% premium): Rice, Maize, Jowar, Bajra, Ragi, Arhar/Tur, Moong,
+  Urad, Groundnut, Sunflower, Soyabean, Sesamum, Cotton
+
+Rabi crops (1.5% premium): Wheat, Barley, Gram, Masoor, Masoor, Linseed,
+  Safflower, Rapeseed and Mustard
+
+Commercial crops (5% premium): Cotton in some states, Sugarcane, Tobacco,
+  Banana, Onion, Potato, Garlic, Ginger, Turmeric
+
+Horticulture/vegetables (5% premium): Brinjal, Cabbage, Cauliflower, Pumpkin,
+  Tomato, Bitter Gourd, Bottle Gourd, Sweet Potato, Tapioca,
+  Coconut, Arecanut, Coffee, Black Pepper, Mango, Grapes, Orange,
+  Pineapple, Guava, Lemon, Apple, Papaya
+
+PMFBY sum insured per hectare (approximate, used for insurance cost calculation):
+  Rice: 30000, Wheat: 28000, Maize: 22000, Jowar: 16000, Bajra: 14000
+  Ragi: 15000, Barley: 18000, Arhar/Tur: 20000, Moong: 16000, Urad: 16000
+  Gram: 20000, Masoor: 18000, Groundnut: 30000, Mustard: 20000
+  Sunflower: 22000, Soyabean: 20000, Sesamum: 18000, Linseed: 17000
+  Safflower: 18000, Cotton: 35000, Sugarcane: 40000
+
+================================================================================
+SECTION 3: PM-KISAN DIRECT INCOME SUPPORT
+================================================================================
+PM-KISAN: Rs 6000 per year paid directly to farmer families in three instalments.
+Per season equivalent: Rs 2000 (approximately Rs 500 per hectare for average 4-ha farm).
+Applies to: all landholding farmer families across all crops.
+Not crop-specific. Added as flat per-season benefit.
+
+================================================================================
+SECTION 4: PROCUREMENT EFFICIENCY — NATIONAL AVERAGE
+================================================================================
+Not all states procure at MSP. National average procurement rates:
+  Rice: ~30% of production procured at MSP nationally
+  Wheat: ~35% of production procured at MSP nationally
+  Pulses: ~10-15% procured under PM-AASHA
+  Oilseeds: ~10% procured under PM-AASHA
+  Cotton: ~20% procured via CCI
+
+Implication: effective_price = MSP × procurement_probability + market_price × (1 - procurement_probability)
+States with high procurement probability are listed in state-specific documents.

@@ -1,0 +1,67 @@
+DOCUMENT: MAHARASHTRA STATE AGRICULTURAL POLICY 2024-25
+STATE: Maharashtra
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: No fixed state bonus currently. Maharashtra announces paddy bonus periodically.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 40
+  effective_msp_per_kg: 23.00
+  note: Maharashtra CM has announced paddy bonus in winter session historically. Verify current season.
+
+Soyabean: Central MSP Rs 49.92/kg. Maharashtra is top soyabean state.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 25
+  effective_msp_per_kg: 49.92
+  note: NAFED procurement triggered only when market price falls below MSP.
+
+Cotton: Central MSP Rs 70.21/kg (medium staple). CCI procurement active in Vidarbha.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 35
+  effective_msp_per_kg: 70.21
+
+Arhar/Tur: Central MSP Rs 70.00/kg. Maharashtra is major tur-producing state.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 30
+  effective_msp_per_kg: 70.00
+  note: 100% procurement guarantee under Budget 2025. NAFED and NCCF active.
+
+================================================================================
+SECTION 2: MAHARASHTRA STATE-SPECIFIC SCHEMES
+================================================================================
+Namo Shetkari Mahasanman Nidhi:
+  Rs 6000 per year additional income support (on top of PM-KISAN)
+  Total income support = PM-KISAN Rs 6000 + Namo Shetkari Rs 6000 = Rs 12000/year
+  Per season: Rs 4000 (Rs 2000 PM-KISAN + Rs 2000 Namo Shetkari)
+  additional_income_support_per_season: 2000
+
+Maharashtra Shetkari Sathi Yojana:
+  Zero percent interest crop loans for small and marginal farmers
+  Loan up to Rs 3 lakh at 0% interest if repaid on time
+
+Jalyukt Shivar Abhiyan:
+  Water conservation works in drought-prone districts (Marathwada, Vidarbha)
+  Reduces input costs through improved irrigation access
+
+PMJDY + DBT: direct subsidy transfers active.
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY implemented. Standard rates: 2% Kharif, 1.5% Rabi.
+Maharashtra has had delays in releasing state share of premium in some years.
+  pmfby_state_reliability: moderate
+  note: Verify premium payment status for current season at pmfby.gov.in
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 3000 (partial electricity subsidy for pump sets)
+Fertilizer: national DBT subsidy applies.
+
+================================================================================
+SECTION 5: DISTRESS REGIONS
+================================================================================
+Vidarbha and Marathwada are designated distress regions.
+Additional relief packages announced periodically — check Maharashtra Agriculture Department.

@@ -1,0 +1,39 @@
+DOCUMENT: ANDAMAN AND NICOBAR ISLANDS UT AGRICULTURAL POLICY 2024-25
+STATE: Andaman and Nicobar Islands
+TYPE: Union Territory (No Legislature)
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Note: Small island UT. Agriculture is limited. Central government administers directly.
+Rice: Small-scale production for local consumption.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 15
+  effective_msp_per_kg: 23.00
+
+Coconut: Important crop. Copra MSP Rs 111.60/kg applies.
+  procurement_efficiency_pct: 10
+
+Fruits and vegetables: Local market consumption. No MSP.
+
+================================================================================
+SECTION 2: ANDAMAN AND NICOBAR SCHEMES
+================================================================================
+Andaman and Nicobar Administration Agriculture Department:
+  Centrally administered. National agricultural schemes apply.
+  Direct input subsidy through A&N administration for seeds and fertilizers.
+
+PM-KISAN: Rs 2000/season — implemented.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active for registered farmers.
+pmfby_state_reliability: moderate
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 2000
+Special central government package for island agriculture development.

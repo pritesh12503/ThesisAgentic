@@ -1,0 +1,45 @@
+DOCUMENT: KARNATAKA STATE AGRICULTURAL POLICY 2024-25
+STATE: Karnataka
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: Karnataka procures paddy. State bonus varies by season.
+  state_bonus_per_kg: 2.00
+  procurement_efficiency_pct: 55
+  effective_msp_per_kg: 25.00
+  note: Karnataka typically adds Rs 200/quintal (Rs 2/kg) bonus over central MSP for paddy.
+
+Ragi: Karnataka is the largest ragi-producing state. Decentralized procurement active.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 40
+  effective_msp_per_kg: 40.29
+
+Arhar/Tur: NAFED procurement active in Karnataka under PM-AASHA.
+  procurement_efficiency_pct: 30
+  effective_msp_per_kg: 70.00
+
+================================================================================
+SECTION 2: KARNATAKA STATE-SPECIFIC SCHEMES
+================================================================================
+Raita Siri (Farmer Prosperity):
+  Rs 5000 per hectare per season direct benefit to farmers
+  raita_siri_per_ha_per_season: 5000
+
+Raita Bandhu (previously under different name):
+  Input subsidy scheme for seeds and fertilizers
+  Estimated value: Rs 2000-3000 per hectare
+
+PM-KISAN: Rs 2000/season — implemented.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+Standard PMFBY rates. Karnataka pays state share.
+pmfby_state_reliability: good
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 4000 (free electricity for agricultural pump sets for small farmers)

@@ -1,0 +1,43 @@
+DOCUMENT: ARUNACHAL PRADESH STATE AGRICULTURAL POLICY 2024-25
+STATE: Arunachal Pradesh
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: Important food crop in valleys. Very limited procurement.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 8
+  effective_msp_per_kg: 23.00
+
+Maize: Valley crop. Limited procurement.
+  procurement_efficiency_pct: 5
+  effective_msp_per_kg: 22.25
+
+Kiwi, Apple, Orange: Major horticulture crops. No MSP.
+  note: Arunachal produces Kiwi (India's largest producer), large cardamom, and cinnamon.
+  Market-driven prices. NHM supports post-harvest infrastructure.
+
+================================================================================
+SECTION 2: ARUNACHAL PRADESH STATE-SPECIFIC SCHEMES
+================================================================================
+Chief Minister's Sashakt Kisan Yojana:
+  Input support and market linkage for tribal farmers
+
+Horticulture Development Programme:
+  Subsidy for orchard establishment (apple, kiwi, orange)
+  Cold chain development supported by NHM
+
+PM-KISAN: Rs 2000/season — implemented but with challenges in remote areas.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY coverage very limited due to remote terrain and land record issues.
+pmfby_state_reliability: very low
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 1500
+NE special agricultural package. Large cardamom development programme.

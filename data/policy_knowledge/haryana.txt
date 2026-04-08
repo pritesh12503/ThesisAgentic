@@ -1,0 +1,52 @@
+DOCUMENT: HARYANA STATE AGRICULTURAL POLICY 2024-25
+STATE: Haryana
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Haryana has near-100% procurement efficiency for rice and wheat. No state bonus.
+
+Rice: No state bonus. Central MSP Rs 23.00/kg.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 90
+  effective_msp_per_kg: 23.00
+
+Wheat: No state bonus. Central MSP Rs 21.75/kg.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 93
+  effective_msp_per_kg: 21.75
+
+Maize: state_bonus_per_kg: 0, procurement_efficiency_pct: 20
+
+Bajra: Central MSP Rs 25.25/kg.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 25
+
+================================================================================
+SECTION 2: HARYANA STATE-SPECIFIC SCHEMES
+================================================================================
+Mera Pani Meri Virasat (My Water My Heritage):
+  Rs 7000 per acre incentive for farmers who shift from paddy to non-paddy crops
+  Eligible alternative crops: maize, arhar, moong, urad, cotton, sunflower
+  Applicable in blocks where groundwater depth > 40 feet
+
+Bhavantar Bharpai Yojana (Haryana):
+  Price deficiency payment for horticulture crops when market price falls below notified rate
+  Covers: potato, tomato, onion, cauliflower, brinjal, cabbage, garlic
+  Payment = (notified_rate - actual_sale_price) × quantity sold at registered mandi
+
+PM-KISAN: Rs 2000/season — fully implemented.
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY implemented. Standard premium rates: 2% Kharif, 1.5% Rabi.
+Haryana pays state premium share on time.
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+Power subsidy: subsidized electricity for agricultural pumps
+  power_subsidy_per_ha: 4500
+
+Fertilizer: national DBT neem-coated urea and DAP subsidy applies.

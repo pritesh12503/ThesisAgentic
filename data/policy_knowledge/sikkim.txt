@@ -1,0 +1,49 @@
+DOCUMENT: SIKKIM STATE AGRICULTURAL POLICY 2024-25
+STATE: Sikkim
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Maize: Important hill crop. Limited procurement.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 10
+  effective_msp_per_kg: 22.25
+
+Rice: Valley areas only. Very limited surplus.
+  procurement_efficiency_pct: 8
+  effective_msp_per_kg: 23.00
+
+Large Cardamom: Sikkim is India's largest large cardamom producer. No MSP.
+  note: Spices Board monitors market. Premium export product. Rs 800-2000/kg range.
+
+Organic Vegetables: Sikkim is India's first fully organic state (2016).
+  note: All crops in Sikkim are organically certified. Organic premium applies to all produce.
+  organic_premium_pct: 30
+
+================================================================================
+SECTION 2: SIKKIM STATE-SPECIFIC SCHEMES
+================================================================================
+Sikkim Organic Mission:
+  State achieved 100% organic certification in 2016 (first in India)
+  All farmers receive free organic certification
+  Organic market linkage with premium buyers (hotels, supermarkets, export)
+  organic_certification_subsidy: fully_state_funded
+
+Chief Minister's Agriculture Stabilisation Fund:
+  Compensates farmers for crop loss due to natural disasters
+
+PM-KISAN: Rs 2000/season — implemented.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY coverage limited. Sikkim has its own crop loss compensation fund.
+pmfby_state_reliability: moderate
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 2000
+Free organic inputs (compost, bio-pesticides) provided by state to all registered farmers.
+NHM support for large cardamom and ginger cultivation.

@@ -1,0 +1,44 @@
+DOCUMENT: JHARKHAND STATE AGRICULTURAL POLICY 2024-25
+STATE: Jharkhand
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: Jharkhand is predominantly a rice-growing state. Procurement improving.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 25
+  effective_msp_per_kg: 23.00
+  note: Jharkhand has expanded MSP procurement centres in recent years but coverage remains limited.
+
+Arhar/Tur: Limited procurement.
+  procurement_efficiency_pct: 8
+  effective_msp_per_kg: 70.00
+
+Maize: Important crop in tribal areas. Limited procurement.
+  procurement_efficiency_pct: 10
+  effective_msp_per_kg: 22.25
+
+================================================================================
+SECTION 2: JHARKHAND STATE-SPECIFIC SCHEMES
+================================================================================
+Mukhyamantri Krishi Ashirwad Yojana:
+  Rs 5000 per acre per year for small and marginal farmers
+  Maximum Rs 25000 per year (up to 5 acres)
+  mkay_per_ha_per_season: 6177 (approximately Rs 5000/acre * 2.47 acres/ha ÷ 2 seasons)
+  additional_income_support_per_season: 4177 (above PM-KISAN)
+
+Zero percent interest crop loans for tribal farmers through NABARD linkage.
+
+PM-KISAN: Rs 2000/season — implemented.
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active in Jharkhand. State has had some delays in premium payment.
+pmfby_state_reliability: moderate
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 2000
+Fertilizer: national DBT subsidy. Seed subsidy for tribal farmer groups.

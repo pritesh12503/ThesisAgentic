@@ -1,0 +1,43 @@
+DOCUMENT: MIZORAM STATE AGRICULTURAL POLICY 2024-25
+STATE: Mizoram
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Maize: Important crop. Limited procurement.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 10
+  effective_msp_per_kg: 22.25
+
+Rice: Primarily for subsistence. Limited surplus for procurement.
+  procurement_efficiency_pct: 8
+  effective_msp_per_kg: 23.00
+
+Ginger: Important cash crop. No MSP.
+  note: Market-driven price. Quality Mizo ginger has export demand.
+
+================================================================================
+SECTION 2: MIZORAM STATE-SPECIFIC SCHEMES
+================================================================================
+New Land Use Policy (NLUP):
+  State-specific scheme providing livelihood support to families
+  Replaced jhum (shifting cultivation) with settled farming
+  One-time grant of Rs 1 lakh per family for farm development under settled agriculture
+
+Chief Minister's Agriculture Mission:
+  Input support and infrastructure development for settled farmers
+
+PM-KISAN: Rs 2000/season — implemented.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active but coverage limited.
+pmfby_state_reliability: low to moderate
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 1500
+NE special agricultural development package. Seed subsidy through state agricultural department.

@@ -1,0 +1,43 @@
+DOCUMENT: TAMIL NADU STATE AGRICULTURAL POLICY 2024-25
+STATE: Tamil Nadu
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: Tamil Nadu procures paddy via Civil Supplies Corporation. Strong procurement state.
+  state_bonus_per_kg: 3.00
+  procurement_efficiency_pct: 75
+  effective_msp_per_kg: 26.00
+  note: Tamil Nadu typically pays Rs 300/quintal (Rs 3/kg) bonus over central MSP.
+  source: Tamil Nadu Civil Supplies Corporation paddy procurement 2023-24.
+
+Groundnut: NAFED procurement active.
+  procurement_efficiency_pct: 25
+  effective_msp_per_kg: 65.82
+
+================================================================================
+SECTION 2: TAMIL NADU STATE-SPECIFIC SCHEMES
+================================================================================
+Chief Minister's Farmer Insurance Scheme:
+  Free life insurance cover of Rs 2 lakh for all farmers in Tamil Nadu
+  Crop insurance (PMFBY) premium fully waived by state government for small farmers
+
+Uzhavar Sandhai (Farmers Market):
+  Direct-to-consumer markets in major cities
+  Eliminates middlemen — farmers typically get 15-20% more than APMC price
+
+PM-KISAN: Rs 2000/season — fully implemented.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+Tamil Nadu waives farmer premium for PMFBY for small and marginal farmers.
+  pmfby_farmer_premium_pct: 0 (state-subsidized for small/marginal farmers)
+  pmfby_state_reliability: excellent
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 5000 (free electricity for agricultural pump sets)
+Seed subsidy: certified seeds at 50% subsidy for notified varieties

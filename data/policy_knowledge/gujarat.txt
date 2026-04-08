@@ -1,0 +1,46 @@
+DOCUMENT: GUJARAT STATE AGRICULTURAL POLICY 2024-25
+STATE: Gujarat
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Wheat: Gujarat procures wheat. High efficiency.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 60
+  effective_msp_per_kg: 21.75
+
+Groundnut: Gujarat is the largest groundnut-producing state. NAFED active.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 35
+  effective_msp_per_kg: 65.82
+
+Cotton: CCI procurement active. Gujarat is major cotton state.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 45
+  effective_msp_per_kg: 70.21
+
+Castor Seed: No MSP. Market price only. Gujarat is world's largest castor producer.
+  note: Market-driven. Typically strong prices due to export demand.
+
+================================================================================
+SECTION 2: GUJARAT STATE-SPECIFIC SCHEMES
+================================================================================
+Mukhyamantri Kisan Sahay Yojana:
+  Crop damage compensation: Rs 20000 per hectare for 33-60% crop loss
+  Rs 25000 per hectare for >60% crop loss
+  Covers: natural calamity losses not covered by PMFBY
+
+PM-KISAN: Rs 2000/season — fully implemented.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+Standard PMFBY. Gujarat pays state share reliably.
+pmfby_state_reliability: good
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 3500
+Drip irrigation subsidy: 50-80% subsidy on drip/sprinkler equipment (Jyotigram Yojana context).

@@ -1,0 +1,43 @@
+DOCUMENT: NAGALAND STATE AGRICULTURAL POLICY 2024-25
+STATE: Nagaland
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: Primary food crop. Very limited procurement due to jhum cultivation system.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 5
+  effective_msp_per_kg: 23.00
+
+Maize: Important in settled areas. Limited procurement.
+  procurement_efficiency_pct: 8
+  effective_msp_per_kg: 22.25
+
+King Chilli (Raja Mircha / Bhut Jolokia): Nagaland's premium commercial crop. No MSP.
+  note: World's hottest chilli. GI tag awarded. Commands Rs 200-500/kg in premium markets.
+
+================================================================================
+SECTION 2: NAGALAND STATE-SPECIFIC SCHEMES
+================================================================================
+Nagaland Organic Mission:
+  Promotes organic certification for all major crops
+  Target: entire Nagaland state to be certified organic by 2025
+
+Chief Minister's Integrated Agriculture Mission:
+  Convergence scheme for agricultural development
+  Focus on integrated farming systems for hill tribes
+
+PM-KISAN: Rs 2000/season — implemented.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY coverage limited in Nagaland due to land tenure complexity (community land).
+pmfby_state_reliability: low
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 1500
+NE special package. State promotes organic inputs over chemical fertilizers.

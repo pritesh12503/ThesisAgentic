@@ -1,0 +1,44 @@
+DOCUMENT: ANDHRA PRADESH STATE AGRICULTURAL POLICY 2024-25
+STATE: Andhra Pradesh
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: Andhra Pradesh is a major rice-procuring state.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 70
+  effective_msp_per_kg: 23.00
+
+Groundnut: NAFED procurement active. AP is major groundnut producer.
+  procurement_efficiency_pct: 30
+  effective_msp_per_kg: 65.82
+
+Arhar/Tur: NAFED procurement active. 100% procurement guarantee applies.
+  procurement_efficiency_pct: 35
+  effective_msp_per_kg: 70.00
+
+================================================================================
+SECTION 2: ANDHRA PRADESH STATE-SPECIFIC SCHEMES
+================================================================================
+YSR Rythu Bharosa (Farmer Support):
+  Rs 13500 per year per farmer family (Rs 6750 per season)
+  Combined PM-KISAN Rs 6000 + State Rs 7500 = Rs 13500/year total
+  ysrb_per_ha_per_season: 6750
+  additional_income_support_per_season: 3750 (state portion above PM-KISAN)
+
+YSR Free Crop Insurance:
+  State pays 100% of PMFBY farmer premium for all farmers
+  pmfby_farmer_premium_pct: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+Farmer premium fully paid by AP government.
+pmfby_farmer_premium_pct: 0
+pmfby_state_reliability: good
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 5500 (free electricity for agricultural pumps)
+Seed village programme: subsidized certified seeds.

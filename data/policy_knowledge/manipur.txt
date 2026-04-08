@@ -1,0 +1,42 @@
+DOCUMENT: MANIPUR STATE AGRICULTURAL POLICY 2024-25
+STATE: Manipur
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: Manipur is a rice-producing state. Limited procurement infrastructure.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 15
+  effective_msp_per_kg: 23.00
+
+Maize: Important crop in hill districts.
+  procurement_efficiency_pct: 10
+  effective_msp_per_kg: 22.25
+
+Black Rice (Chakhao): Indigenous variety. Premium market price. No MSP.
+  note: Chakhao black rice commands Rs 150-300/kg in premium/export markets.
+
+================================================================================
+SECTION 2: MANIPUR STATE-SPECIFIC SCHEMES
+================================================================================
+Chief Minister's Agricultural Mechanisation Scheme:
+  Subsidy on farm machinery (tractors, power tillers) for small farmers
+
+Manipur Organic Mission:
+  State promotes organic certification for hill tribal farmers
+  Organic produce linked to premium buyers and export markets
+
+PM-KISAN: Rs 2000/season — implemented but with some registration challenges.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active but coverage limited due to terrain and infrastructure.
+pmfby_state_reliability: low to moderate
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 1500
+NE special package for agricultural development. Seed subsidies through state corporation.

@@ -1,0 +1,51 @@
+DOCUMENT: UTTAR PRADESH STATE AGRICULTURAL POLICY 2024-25
+STATE: Uttar Pradesh
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Wheat: UP is major wheat state but procurement efficiency lower than Punjab/Haryana.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 45
+  effective_msp_per_kg: 21.75
+
+Rice: Low procurement efficiency despite being large producer.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 8
+  effective_msp_per_kg: 23.00
+  note: Only ~8% of UP rice reaches MSP procurement. Most sold in open market below MSP.
+
+Sugarcane: UP is India's largest sugarcane state. State Advised Price (SAP) is ABOVE FRP.
+  state_advised_price_per_kg: 3.65
+  frp_per_kg: 3.40
+  state_bonus_per_kg: 0.25
+  effective_msp_per_kg: 3.65
+  note: UP SAP Rs 365/quintal vs FRP Rs 340/quintal. SAP is binding in UP.
+  procurement_efficiency_pct: 95 (nearly all cane sold to mills)
+
+Arhar/Tur: Low procurement efficiency.
+  procurement_efficiency_pct: 10
+  effective_msp_per_kg: 70.00
+
+================================================================================
+SECTION 2: UTTAR PRADESH STATE-SPECIFIC SCHEMES
+================================================================================
+UP Kisan Karj Rahat (Loan Waiver):
+  Partial loan waiver for small/marginal farmers — historic scheme, check current status
+
+PM-KISAN: Rs 2000/season — implemented but with some registration issues in UP.
+additional_income_support_per_season: 0
+
+Ration card holders: subsidized food for farmer families under NFSA.
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active. UP has had delays in state premium payment in some years.
+pmfby_state_reliability: moderate
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 3500 (subsidized electricity for pumps)
+Fertilizer: national DBT subsidy.

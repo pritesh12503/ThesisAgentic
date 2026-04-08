@@ -1,0 +1,44 @@
+DOCUMENT: TRIPURA STATE AGRICULTURAL POLICY 2024-25
+STATE: Tripura
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: Tripura has decentralized procurement. Moderate efficiency.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 30
+  effective_msp_per_kg: 23.00
+
+Jute: JCI procurement active.
+  procurement_efficiency_pct: 25
+  effective_msp_per_kg: 53.35
+
+Pineapple: Tripura is a major pineapple producer. No MSP.
+  note: Queen variety pineapple is popular. State promotes GI tag and export market linkage.
+
+Rubber: Tripura is 3rd largest rubber-producing state after Kerala and Karnataka.
+  note: No MSP for rubber. Rubber Board sets reference prices. Market-driven.
+
+================================================================================
+SECTION 2: TRIPURA STATE-SPECIFIC SCHEMES
+================================================================================
+Chief Minister's Krishi Unnayan Yojana:
+  Comprehensive agricultural support for small and marginal farmers
+  Input subsidies, irrigation support
+
+MGNREGS convergence with agriculture: farm pond, bunding work benefits farmers.
+
+PM-KISAN: Rs 2000/season — implemented.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active.
+pmfby_state_reliability: moderate
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 2000
+NE special agricultural package. Rubber Board subsidy for new rubber plantation.

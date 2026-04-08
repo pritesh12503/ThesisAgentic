@@ -1,0 +1,49 @@
+DOCUMENT: HIMACHAL PRADESH STATE AGRICULTURAL POLICY 2024-25
+STATE: Himachal Pradesh
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Wheat: HP procures wheat. Limited plains area for procurement.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 25
+  effective_msp_per_kg: 21.75
+
+Maize: Major Kharif crop in HP hills.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 15
+  effective_msp_per_kg: 22.25
+
+Apple: No MSP. HP is India's largest apple-producing state.
+  note: Market-driven price. Apple mandis in Shimla and Kullu. Cold storage available.
+  state_floor_price_note: HP government announces indicative floor price for apple each season.
+  procurement_efficiency_pct: 0
+
+================================================================================
+SECTION 2: HIMACHAL PRADESH STATE-SPECIFIC SCHEMES
+================================================================================
+HP Mukhyamantri Khet Sanrakshan Yojana:
+  Subsidized fencing for crop protection from wild animals
+  Up to 50% subsidy on fencing material
+
+Universal Health Protection Scheme: crop damage insurance for horticulture crops.
+
+Horticulture Development Programme:
+  Subsidy on cold storage, pack houses, and reefer transport for apple growers
+  Reduces post-harvest losses significantly
+
+PM-KISAN: Rs 2000/season — implemented.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active in lower plains of HP. Limited in high altitude areas.
+pmfby_state_reliability: moderate
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 2500
+Seed subsidy through HP Seeds Corporation for wheat and maize.
+NHM grants for orchard development and drip irrigation in horticulture zones.

@@ -1,0 +1,46 @@
+DOCUMENT: KERALA STATE AGRICULTURAL POLICY 2024-25
+STATE: Kerala
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: Kerala pays significant state bonus over central MSP. Major procurement state.
+  state_bonus_per_kg: 6.37
+  procurement_efficiency_pct: 90
+  effective_msp_per_kg: 29.37
+  note: Kerala Civil Supplies Corporation procures at central MSP + state bonus.
+  source: Kerala Agriculture Department, Kharif 2023-24 (Rs 6.37/kg bonus).
+  note2: Bonus may change based on budget. Central CACP recommends states reduce bonuses
+         but Kerala continues to provide income support to paddy farmers.
+
+Coconut: Kerala Coconut Development Board support. No MSP but floor price intervention.
+  state_support_note: Kerala Coconut Development Board provides Rs 10/kg minimum price support
+    for copra when market falls below floor.
+  effective_floor_per_kg: 10 (for dry copra/copra equivalent)
+
+================================================================================
+SECTION 2: KERALA STATE-SPECIFIC SCHEMES
+================================================================================
+Kerala Karshaka Kshesha Nidhi (Farmer Welfare Fund):
+  Pension and social security for farmers
+  Not a direct crop income support.
+
+PM-KISAN: Rs 2000/season — implemented.
+additional_income_support_per_season: 0
+
+Vegetable and Fruit Promotion Council Keralam (VFPCK):
+  Connects vegetable farmers to institutional buyers (supermarkets, hospitals)
+  Provides 5-15% price premium over APMC for enrolled farmers.
+  Crops: vegetables, fruits, banana, tapioca
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY: 2% Kharif, 1.5% Rabi. Standard national rates apply.
+pmfby_state_reliability: moderate
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 2000
+Subsidized seeds and planting material through Kerala Agricultural University.

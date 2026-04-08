@@ -1,0 +1,45 @@
+DOCUMENT: WEST BENGAL STATE AGRICULTURAL POLICY 2024-25
+STATE: West Bengal
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Rice: West Bengal is a DCP state with moderate procurement efficiency.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 45
+  effective_msp_per_kg: 23.00
+
+Jute: JCI (Jute Corporation of India) procurement active. WB is major jute state.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 30
+  effective_msp_per_kg: 53.35
+
+Potato: No MSP. WB Bhavantar-type intervention via Sufal Bangla.
+  effective_floor_note: No fixed floor. State procures for Sufal Bangla retail chain when prices crash.
+
+================================================================================
+SECTION 2: WEST BENGAL STATE-SPECIFIC SCHEMES
+================================================================================
+Krishak Bandhu (Farmer Friend):
+  Rs 10000 per year per acre (Rs 5000/season) for land-owning farmers
+  Minimum Rs 2000/year for marginal farmers with < 1 acre
+  krishak_bandhu_per_ha_per_season: 12355
+  additional_income_support_per_season: 10355 (above PM-KISAN; WB chose separate scheme)
+  note: West Bengal initially did not implement PM-KISAN, opting for Krishak Bandhu instead.
+        Check current status — both may now be available.
+
+Sufal Bangla: direct-to-consumer vegetable markets. Farmers get better prices.
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+West Bengal opted out of PMFBY. Has its own state crop insurance scheme.
+  state_insurance_scheme: Bangla Shasya Bima
+  farmer_premium: 1% (lower than national PMFBY rates)
+  pmfby_state_reliability: good (own scheme)
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 2000
+Subsidized seeds through WB Seed Corporation.

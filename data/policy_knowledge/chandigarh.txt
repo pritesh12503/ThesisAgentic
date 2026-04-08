@@ -1,0 +1,38 @@
+DOCUMENT: CHANDIGARH UT AGRICULTURAL POLICY 2024-25
+STATE: Chandigarh
+TYPE: Union Territory (No Legislature) — Joint Capital of Punjab and Haryana
+
+================================================================================
+SECTION 1: STATE BONUS OVER CENTRAL MSP
+================================================================================
+Note: Chandigarh is an urban UT with minimal agricultural land.
+The very limited agricultural area follows Punjab's agricultural policy as it borders Punjab.
+
+Wheat: Follows Punjab norms.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 90
+  effective_msp_per_kg: 21.75
+
+Rice: Follows Punjab norms.
+  state_bonus_per_kg: 0
+  procurement_efficiency_pct: 90
+  effective_msp_per_kg: 23.00
+
+================================================================================
+SECTION 2: CHANDIGARH SCHEMES
+================================================================================
+Chandigarh uses national agricultural schemes directly.
+PM-KISAN: Rs 2000/season — implemented for registered farmers.
+additional_income_support_per_season: 0
+
+================================================================================
+SECTION 3: PMFBY
+================================================================================
+PMFBY active for minimal agricultural area.
+pmfby_state_reliability: good (follows Punjab implementation)
+
+================================================================================
+SECTION 4: INPUT SUBSIDIES
+================================================================================
+power_subsidy_per_ha: 4500 (follows Punjab rates)
+National fertilizer DBT subsidy applies.
