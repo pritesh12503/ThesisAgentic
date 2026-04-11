@@ -4,6 +4,8 @@
 .env.production
 .env.development
 
+
+
 # ── Python ────────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
@@ -16,6 +18,8 @@ build/
 venv/
 env/
 .venv/
+
+myenv/
 
 # ── Node / Frontend ───────────────────────────────────────────────
 node_modules/

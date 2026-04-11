@@ -38,6 +38,12 @@ from langchain_core.messages import HumanMessage
 
 logger = logging.getLogger(__name__)
 
+# Module-level cache — model loads once per process, not once per crop query
+_ST_MODEL = None
+
+# Cache policy text chunks per state — load/chunk once, reuse for all 51 crops
+_POLICY_CHUNKS_CACHE: dict = {}
+
 POLICY_DIR = Path(__file__).parent.parent / "data" / "policy_knowledge"
 
 # State name → filename mapping
@@ -174,12 +180,18 @@ def _faiss_retrieval(chunks: list, query: str, top_k: int = 6) -> list:
     """
     FAISS-based semantic retrieval using sentence-transformers.
     Falls back to keyword retrieval if not available.
+    Model is cached at module level — loads once per process, not per query.
     """
     try:
         from sentence_transformers import SentenceTransformer
         import numpy as np
 
-        model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+        global _ST_MODEL
+        if _ST_MODEL is None:
+            logger.info("[PolicyRAG] Loading sentence-transformers model (once)...")
+            _ST_MODEL = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+
+        model = _ST_MODEL
 
         chunk_embeddings = model.encode(chunks, convert_to_numpy=True)
         query_embedding  = model.encode([query], convert_to_numpy=True)
@@ -217,9 +229,13 @@ def query_policy(
       policy_note                 : str    — human-readable policy summary
     """
     try:
-        # Load text
-        full_text = _load_policy_text(state_name)
-        chunks    = _chunk_text(full_text)
+        # Cache chunks per state — load/chunk once for all 51 crops in same run
+        global _POLICY_CHUNKS_CACHE
+        cache_key = state_name.lower().strip()
+        if cache_key not in _POLICY_CHUNKS_CACHE:
+            full_text = _load_policy_text(state_name)
+            _POLICY_CHUNKS_CACHE[cache_key] = _chunk_text(full_text)
+        chunks = _POLICY_CHUNKS_CACHE[cache_key]
 
         if not chunks:
             logger.warning("Policy text empty. Using fallback.")

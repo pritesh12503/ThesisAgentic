@@ -119,7 +119,6 @@ def run_crop_advisor(
         "sell_timing":            None,
         "policy_note":            None,
         "final_explanation":      None,
-        # Post-harvest fields
         "post_harvest_action":     None,
         "post_harvest_sell_month": None,
         "post_harvest_channel":    None,
@@ -128,7 +127,7 @@ def run_crop_advisor(
         "weather_signal":          None,
         "weather_urgency":         None,
         "post_harvest_advisory":   None,
-        "errors":                 [],
+        "errors": [],   # must be list, not None — Annotated reducer expects list
     }
 
     graph = build_graph()

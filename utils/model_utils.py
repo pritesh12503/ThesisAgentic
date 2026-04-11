@@ -123,8 +123,17 @@ def train_agronomic_model(
     le = LabelEncoder()
     y = le.fit_transform(training_df["crop_label"].values)
 
+    import pandas as pd
+
+    y = pd.Series(y)
+    counts = y.value_counts()
+    valid = counts[counts > 1].index
+    training_df = training_df[training_df['crop_label'].isin(valid)]
+
+
+
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=42, stratify=y
+        X, y, test_size=0.2, random_state=42
     )
 
     if model_type == "gradient_boosting":

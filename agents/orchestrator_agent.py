@@ -51,7 +51,6 @@ def orchestrator_node(state: CropAdvisorState) -> CropAdvisorState:
     )
 
     return {
-        **state,
         "final_scores":     final_scores,
         "recommended_crop": recommended_crop,
         "top_3_crops":      top_3,

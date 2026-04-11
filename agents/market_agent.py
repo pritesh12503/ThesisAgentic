@@ -161,7 +161,6 @@ def market_agent_node(state: CropAdvisorState) -> CropAdvisorState:
             profit_estimates, policy_details, market_reasoning
     """
     logger.info(f"[MarketAgent] district={state['district']}, state={state['state_name']}")
-    errors = list(state.get("errors") or [])
 
     try:
         yield_df = load_yield_data(YIELD_CSV)
@@ -237,26 +236,22 @@ Be specific with rupee figures. Keep it farmer-focused."""
         response = groq_llm.invoke([HumanMessage(content=prompt)])
 
         return {
-            **state,
             "economic_scores":    economic_scores,
             "yield_predictions":  yield_preds,
-            "price_predictions":  eff_prices,   # store effective price (policy-adjusted)
+            "price_predictions":  eff_prices,
             "profit_estimates":   profit_ests,
             "policy_details":     policy_details,
             "market_reasoning":   response.content,
-            "errors": errors,
         }
 
     except Exception as e:
         logger.error(f"[MarketAgent] Error: {e}", exc_info=True)
-        errors.append(f"MarketAgent error: {str(e)}")
         return {
-            **state,
             "economic_scores":   {c: 0.0 for c in SUPPORTED_CROPS},
             "yield_predictions": {c: 0.0 for c in SUPPORTED_CROPS},
             "price_predictions": {c: 0.0 for c in SUPPORTED_CROPS},
             "profit_estimates":  {c: 0.0 for c in SUPPORTED_CROPS},
             "policy_details":    {},
             "market_reasoning":  f"Market analysis failed: {str(e)}",
-            "errors": errors,
+            "errors": [f"MarketAgent: {str(e)}"],
         }

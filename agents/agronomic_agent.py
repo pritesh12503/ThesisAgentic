@@ -63,7 +63,6 @@ def agronomic_agent_node(state: CropAdvisorState) -> CropAdvisorState:
     Writes: agro_scores, shap_values, agro_top_crops, agro_reasoning
     """
     logger.info(f"[AgronomicAgent] Running for district: {state['district']}")
-    errors = list(state.get("errors") or [])
 
     try:
         # ── 1. Ensure model exists ────────────────────────────────────────────
@@ -127,22 +126,18 @@ Be specific with numbers from the soil profile. Keep it professional but accessi
                     f"score: {agro_scores.get(top_crops[0], 0):.3f}")
 
         return {
-            **state,
             "agro_scores":    agro_scores,
             "shap_values":    shap_vals,
             "agro_top_crops": top_crops,
             "agro_reasoning": agro_reasoning,
-            "errors": errors,
         }
 
     except Exception as e:
         logger.error(f"[AgronomicAgent] Error: {e}", exc_info=True)
-        errors.append(f"AgronomicAgent error: {str(e)}")
         return {
-            **state,
             "agro_scores":    {c: 0.0 for c in SUPPORTED_CROPS},
             "shap_values":    {},
             "agro_top_crops": SUPPORTED_CROPS,
             "agro_reasoning": f"Agronomic analysis failed: {str(e)}",
-            "errors": errors,
+            "errors": [f"AgronomicAgent: {str(e)}"],
         }

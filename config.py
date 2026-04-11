@@ -20,7 +20,7 @@ AGRONOMIC_CSV = DATA_DIR / "thesis_agronomic_dataset_clean.csv"
 YIELD_CSV     = DATA_DIR / "crop_production_india.csv"          # NEW
 PRICE_CSV     = DATA_DIR / "Price_Agriculture_commodities_Week.csv"
 
-GROQ_MODEL = "llama3-8b-8192"
+GROQ_MODEL = "llama-3.1-8b-instant"
 
 # New yield dataset column names
 YIELD_COL_STATE    = "State_Name"

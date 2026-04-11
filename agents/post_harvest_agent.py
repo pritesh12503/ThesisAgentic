@@ -34,7 +34,6 @@ def post_harvest_node(state: CropAdvisorState) -> CropAdvisorState:
             weather_urgency, post_harvest_advisory
     """
     logger.info("[PostHarvestAgent] Running post-harvest analysis.")
-    errors = list(state.get("errors") or [])
 
     crop     = state.get("recommended_crop", "")
     district = state.get("district", "")
@@ -121,7 +120,6 @@ Do NOT mention scores, agents, or technical system details."""
         )
 
         return {
-            **state,
             "post_harvest_action":     advisory["final_action"],
             "post_harvest_sell_month": advisory["sell_month"],
             "post_harvest_channel":    advisory["channel"],
@@ -130,14 +128,11 @@ Do NOT mention scores, agents, or technical system details."""
             "weather_signal":          advisory["weather_signal"],
             "weather_urgency":         advisory["weather_urgency"],
             "post_harvest_advisory":   advisory_text,
-            "errors": errors,
         }
 
     except Exception as e:
         logger.error(f"[PostHarvestAgent] Error: {e}", exc_info=True)
-        errors.append(f"PostHarvestAgent error: {str(e)}")
         return {
-            **state,
             "post_harvest_action":     "SELL_IMMEDIATELY",
             "post_harvest_sell_month": "as soon as possible",
             "post_harvest_channel":    "local APMC mandi",
@@ -147,5 +142,5 @@ Do NOT mention scores, agents, or technical system details."""
             "weather_urgency":         "LOW",
             "post_harvest_advisory":   f"Post-harvest analysis failed: {str(e)}. "
                                        f"Please consult your local agricultural extension officer.",
-            "errors": errors,
+            "errors": [f"PostHarvestAgent: {str(e)}"],
         }

@@ -44,7 +44,6 @@ def explainability_node(state: CropAdvisorState) -> CropAdvisorState:
     Writes: shap_summary, policy_note, final_explanation
     """
     logger.info("[ExplainabilityAgent] Generating crop recommendation explanation.")
-    errors = list(state.get("errors") or [])
 
     crop        = state.get("recommended_crop", "")
     top_3       = state.get("top_3_crops", [])
@@ -101,19 +100,15 @@ Write directly to the farmer. Be specific with numbers. Do not mention post-harv
         logger.info(f"[ExplainabilityAgent] Explanation generated for crop: {crop}")
 
         return {
-            **state,
             "shap_summary":     shap_summary,
             "sell_timing":      "",          # now handled by post_harvest_agent
             "policy_note":      policy_note,
             "final_explanation":final_explanation,
-            "errors": errors,
         }
 
     except Exception as e:
         logger.error(f"[ExplainabilityAgent] Error: {e}", exc_info=True)
-        errors.append(f"ExplainabilityAgent error: {str(e)}")
         return {
-            **state,
             "shap_summary":      "",
             "sell_timing":       "",
             "policy_note":       POLICY_KNOWLEDGE,
@@ -121,5 +116,5 @@ Write directly to the farmer. Be specific with numbers. Do not mention post-harv
                                  f"Agronomic score: {agro_scores.get(crop,0):.3f}. "
                                  f"Economic score: {econ_scores.get(crop,0):.3f}. "
                                  f"Estimated profit: Rs{profit_ests.get(crop,0):,.0f}/ha.",
-            "errors": errors,
+            "errors": [f"ExplainabilityAgent: {str(e)}"],
         }

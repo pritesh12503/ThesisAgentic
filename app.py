@@ -16,7 +16,7 @@ import numpy as np
 # ── Make sure project root is in path ─────────────────────────────────────────
 sys.path.insert(0, os.path.dirname(__file__))
 
-from config import SUPPORTED_CROPS, SEASONS, DEFAULT_W1, DEFAULT_W2, AGRO_FEATURE_LABELS
+from config import SUPPORTED_CROPS, UI_SEASONS, DEFAULT_W1, DEFAULT_W2, AGRO_FEATURE_LABELS
 from utils.data_utils import load_agronomic_data, load_yield_data
 from config import AGRONOMIC_CSV, YIELD_CSV
 
@@ -165,7 +165,7 @@ with st.sidebar:
 
     selected_season = st.selectbox(
         "Season",
-        options=SEASONS,
+        options=UI_SEASONS,
         index=0,
         help="Kharif = Jun–Oct, Rabi = Nov–Apr, Zaid = Mar–Jun"
     )
@@ -385,18 +385,77 @@ else:
 
     # ── Post-Harvest Strategy ──────────────────────────────────────────────────
     st.subheader("📦 Post-Harvest Strategy")
-    col_c, col_d = st.columns(2)
 
-    with col_c:
-        st.markdown("**Selling Time Recommendation**")
-        sell = result.get("sell_timing", "")
-        if sell:
-            st.markdown(f'<div class="agent-section">{sell}</div>', unsafe_allow_html=True)
+    ph_advisory  = result.get("post_harvest_advisory", "")
+    ph_action    = result.get("post_harvest_action", "")
+    ph_month     = result.get("post_harvest_sell_month", "")
+    ph_channel   = result.get("post_harvest_channel", "")
+    ph_storage   = result.get("post_harvest_storage", "")
+    ph_net_gain  = result.get("post_harvest_net_gain", 0.0) or 0.0
+    w_signal     = result.get("weather_signal", "NORMAL")
+    w_urgency    = result.get("weather_urgency", "LOW")
 
-    with col_d:
-        st.markdown("**Government Policy & MSP**")
-        with st.expander("View Policy Details", expanded=False):
-            st.text(result.get("policy_note", ""))
+    if ph_advisory:
+        # Weather alert banner — only show if not NORMAL
+        if w_signal != "NORMAL":
+            urgency_color = {"HIGH": "#d32f2f", "MEDIUM": "#f57c00"}.get(w_urgency, "#388e3c")
+            urgency_icon  = {"HIGH": "🚨", "MEDIUM": "⚠️"}.get(w_urgency, "ℹ️")
+            st.markdown(
+                f'<div style="background:{urgency_color};color:white;padding:10px 16px;'
+                f'border-radius:8px;margin-bottom:12px;font-weight:600;">'
+                f'{urgency_icon} Weather Alert ({w_urgency}): {w_signal.replace("_"," ")}'
+                f'</div>',
+                unsafe_allow_html=True,
+            )
+
+        # Action + sell month pill
+        action_color = {"SELL_IMMEDIATELY": "#d32f2f", "WAIT": "#388e3c",
+                        "SELL_THIS_WEEK": "#f57c00", "SELL_SOON": "#f57c00"}.get(ph_action, "#555")
+        action_label = ph_action.replace("_", " ")
+        sell_label   = f"Sell by: {ph_month}" if ph_month and ph_month != "immediately" \
+                       else "Sell: immediately"
+        st.markdown(
+            f'<div style="display:flex;gap:10px;margin-bottom:12px;">'
+            f'<span style="background:{action_color};color:white;padding:4px 14px;'
+            f'border-radius:20px;font-weight:700;">{action_label}</span>'
+            f'<span style="background:#e0e0e0;color:#333;padding:4px 14px;'
+            f'border-radius:20px;">📅 {sell_label}</span>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+
+        # Main advisory text
+        st.markdown(
+            f'<div class="agent-section">{ph_advisory}</div>',
+            unsafe_allow_html=True,
+        )
+
+        # Three detail cards in columns
+        col_ph1, col_ph2, col_ph3 = st.columns(3)
+
+        with col_ph1:
+            st.markdown("**📍 Selling Channel**")
+            if ph_channel:
+                st.info(ph_channel)
+
+        with col_ph2:
+            st.markdown("**🏪 Storage**")
+            if ph_storage:
+                st.info(ph_storage)
+
+        with col_ph3:
+            st.markdown("**💰 Net Gain if Wait**")
+            if ph_net_gain and ph_net_gain > 0:
+                st.success(f"Rs {ph_net_gain:,.0f} / quintal")
+            else:
+                st.warning("Sell now — storage not viable")
+
+    else:
+        st.info("Post-harvest advisory not available for this run.")
+
+    # Government Policy expander (kept from original)
+    with st.expander("📋 Government Policy & MSP Details", expanded=False):
+        st.text(result.get("policy_note", ""))
 
     # ── Raw State Debug (optional) ─────────────────────────────────────────────
     with st.expander("🔧 Debug: Full Agent State"):
