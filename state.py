@@ -32,6 +32,7 @@ class CropAdvisorState(TypedDict):
     shap_values:    Optional[Dict[str, Dict[str, float]]] # {crop: {feature: shap}}
     agro_top_crops: Optional[List[str]]                  # ranked crop list
     agro_reasoning: Optional[str]                        # LLM narrative
+    lime_summary:   Optional[str]                        # LIME text validation of SHAP
 
     # ── Market agent outputs ──────────────────────────────────────────────────
     economic_scores:   Optional[Dict[str, float]]  # {crop: score_economic}

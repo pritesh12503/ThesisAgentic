@@ -100,25 +100,37 @@ st.markdown("""
 
 # ── Load district lists ────────────────────────────────────────────────────────
 @st.cache_data
-def get_district_list():
+def get_districts_by_state() -> dict:
+    """Load {state -> [districts]} mapping from district_coordinates.csv."""
     try:
-        agro_df = load_agronomic_data(AGRONOMIC_CSV)
-        yield_df = load_yield_data(YIELD_CSV)
-        agro_d = set(agro_df["District"].str.title().unique())
-        yield_d = set(yield_df["Dist Name"].str.title().unique())
-        all_d = sorted(agro_d | yield_d)
-        return all_d
+        import pandas as pd
+        from pathlib import Path
+        coords_path = Path(__file__).parent / "data" / "district_coordinates.csv"
+        df = pd.read_csv(coords_path).dropna(subset=["district", "state"])
+        result = {}
+        for state, grp in df.groupby("state"):
+            result[state.strip()] = sorted(grp["district"].str.strip().unique().tolist())
+        return result
     except Exception:
-        return ["Buldhana", "Ludhiana", "Allahabad", "Bangalore", "Mysuru"]
+        return {"Maharashtra": ["Buldhana", "Nagpur", "Pune"],
+                "Karnataka":   ["Bangalore", "Mysuru"],
+                "Gujarat":     ["Ahmedabad", "Surat"]}
 
 
 @st.cache_data
-def get_state_list():
-    try:
-        agro_df = load_agronomic_data(AGRONOMIC_CSV)
-        return sorted(agro_df["State"].str.title().unique().tolist())
-    except Exception:
-        return ["Maharashtra", "Karnataka", "Gujarat", "Tamil Nadu"]
+def get_state_list() -> list:
+    """All 28 states + UTs."""
+    return sorted([
+        "Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh",
+        "Assam", "Bihar", "Chandigarh", "Chhattisgarh", "Delhi",
+        "Goa", "Gujarat", "Haryana", "Himachal Pradesh",
+        "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala",
+        "Ladakh", "Madhya Pradesh", "Maharashtra", "Manipur",
+        "Meghalaya", "Mizoram", "Nagaland", "Odisha",
+        "Puducherry", "Punjab", "Rajasthan", "Sikkim",
+        "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh",
+        "Uttarakhand", "West Bengal",
+    ])
 
 
 # ── Sidebar ────────────────────────────────────────────────────────────────────
@@ -146,21 +158,30 @@ with st.sidebar:
     st.divider()
     st.subheader("📍 Location & Season")
 
-    districts = get_district_list()
-    states    = get_state_list()
-
-    selected_district = st.selectbox(
-        "District",
-        options=districts,
-        index=districts.index("Buldhana") if "Buldhana" in districts else 0,
-        help="Select your farming district"
-    )
+    districts_by_state = get_districts_by_state()
+    states             = get_state_list()
 
     selected_state = st.selectbox(
         "State",
         options=states,
-        index=0,
+        index=states.index("Maharashtra") if "Maharashtra" in states else 0,
         help="Select your state"
+    )
+
+    # Districts filtered to selected state only
+    state_districts = districts_by_state.get(selected_state, [])
+    if not state_districts:
+        # Fallback: show all districts if state not found in coords
+        all_districts = sorted({d for dlist in districts_by_state.values() for d in dlist})
+        state_districts = all_districts
+
+    default_district = "Buldhana" if "Buldhana" in state_districts else state_districts[0] if state_districts else "Buldhana"
+
+    selected_district = st.selectbox(
+        "District",
+        options=state_districts,
+        index=state_districts.index(default_district) if default_district in state_districts else 0,
+        help="Select your farming district"
     )
 
     selected_season = st.selectbox(
@@ -310,19 +331,27 @@ else:
         plt.close()
 
     with tab2:
-        profit_ests = result.get("profit_estimates", {})
-        yield_preds = result.get("yield_predictions", {})
-        price_preds = result.get("price_predictions", {})
+        profit_ests   = result.get("profit_estimates", {})
+        yield_preds   = result.get("yield_predictions", {})
+        price_preds   = result.get("price_predictions", {})    # effective price (policy-adjusted)
+        policy_dtls   = result.get("policy_details", {}) or {}
 
         table_data = []
         for c in SUPPORTED_CROPS:
+            pol = policy_dtls.get(c, {})
+            mkt_price  = pol.get("msp_per_kg", 0) if pol else 0
+            eff_price  = price_preds.get(c, 0)
+            msp        = pol.get("effective_price_per_kg", 0) if pol else 0
+            subsidy    = pol.get("subsidy_per_ha_per_season", 0) if pol else 0
             table_data.append({
-                "Crop": c.title(),
-                "Agro Score": f"{result.get('agro_scores', {}).get(c, 0):.3f}",
-                "Econ Score": f"{result.get('economic_scores', {}).get(c, 0):.3f}",
-                "Combined": f"{final_scores.get(c, 0):.3f}",
-                "Yield (kg/ha)": f"{yield_preds.get(c, 0):,.0f}",
-                "Price (₹/kg)": f"{price_preds.get(c, 0):.2f}",
+                "Crop":              c.title(),
+                "Agro Score":        f"{result.get('agro_scores', {}).get(c, 0):.3f}",
+                "Econ Score":        f"{result.get('economic_scores', {}).get(c, 0):.3f}",
+                "Combined":          f"{final_scores.get(c, 0):.3f}",
+                "Yield (kg/ha)":     f"{yield_preds.get(c, 0):,.0f}",
+                "Market Price (₹/kg)": f"{eff_price:.2f}",
+                "MSP Floor (₹/kg)":  f"{msp:.2f}" if msp > 0 else "—",
+                "Subsidy (₹/ha)":    f"₹{subsidy:,.0f}" if subsidy > 0 else "—",
                 "Est. Profit (₹/ha)": f"₹{profit_ests.get(c, 0):,.0f}",
             })
         df_table = pd.DataFrame(table_data)
@@ -330,7 +359,7 @@ else:
 
     # ── SHAP Feature Importance ────────────────────────────────────────────────
     st.subheader("🔍 SHAP Feature Importance")
-    shap_vals = result.get("shap_values", {})
+    shap_vals = result.get("shap_values", {})\
 
     if shap_vals and crop in shap_vals:
         crop_shap = shap_vals[crop]
@@ -355,6 +384,16 @@ else:
         fig2.tight_layout()
         st.pyplot(fig2)
         plt.close()
+
+        # LIME validation — compact text, no extra chart
+        lime_summary = result.get("lime_summary", "")
+        if lime_summary:
+            with st.expander("🧪 LIME Validation (cross-check of SHAP)", expanded=False):
+                st.caption(
+                    "LIME (Local Interpretable Model-agnostic Explanations) independently "
+                    "explains this single prediction. Consistent direction with SHAP = reliable explanation."
+                )
+                st.code(lime_summary, language=None)
     else:
         st.info("SHAP values not available for this run.")
 
@@ -453,11 +492,159 @@ else:
     else:
         st.info("Post-harvest advisory not available for this run.")
 
-    # Government Policy expander (kept from original)
-    with st.expander("📋 Government Policy & MSP Details", expanded=False):
-        st.text(result.get("policy_note", ""))
+    # ── Policy Impact Transparency ────────────────────────────────────────────
+    st.subheader("🏛️ Policy Impact Transparency")
+    st.caption("Shows exactly which government policies were applied and their financial effect")
 
-    # ── Raw State Debug (optional) ─────────────────────────────────────────────
+    pol_details = result.get("policy_details", {}) or {}
+    rec_pol     = pol_details.get(crop, {}) or {}
+    profit_ests = result.get("profit_estimates", {}) or {}
+    yield_preds = result.get("yield_predictions", {}) or {}
+    price_preds = result.get("price_predictions", {}) or {}
+
+    if rec_pol:
+        eff_price   = float(rec_pol.get("effective_price_per_kg", 0))
+        msp         = float(rec_pol.get("msp_per_kg", 0))
+        bonus       = float(rec_pol.get("state_bonus_per_kg", 0))
+        proc_pct    = float(rec_pol.get("procurement_efficiency_pct", 0))
+        subsidy     = float(rec_pol.get("subsidy_per_ha_per_season", 0))
+        ins_pct     = float(rec_pol.get("insurance_premium_pct", 0.02))
+        power_sub   = float(rec_pol.get("power_subsidy_per_ha", 0))
+        policy_note_txt = str(rec_pol.get("policy_note", ""))
+
+        yield_val   = float(yield_preds.get(crop, 0))
+        market_p    = float(price_preds.get(crop, 0))
+        total_profit = float(profit_ests.get(crop, 0))
+
+        # Decompose profit
+        from config import INPUT_COSTS
+        input_cost  = float(INPUT_COSTS.get(crop, 20000))
+        base_rev    = yield_val * market_p
+        msp_uplift  = max(0, yield_val * (eff_price - market_p)) if eff_price > market_p else 0
+        ins_cost    = ins_pct * 30000  # approximate sum insured
+
+        # Without policy
+        profit_without_policy = max(0, base_rev - input_cost)
+        profit_with_policy    = total_profit
+
+        # Three columns: price, subsidies, comparison
+        cp1, cp2, cp3 = st.columns(3)
+
+        with cp1:
+            st.markdown("**💰 Price Floor Applied**")
+            if msp > 0 or bonus > 0:
+                st.markdown(f"""
+<div style='background:#e8f5e9;border-radius:8px;padding:12px;'>
+<div style='font-size:0.82rem;color:#555'>Central MSP</div>
+<div style='font-size:1.2rem;font-weight:700;color:#1b5e20'>₹{msp:.2f}/kg</div>
+<div style='font-size:0.82rem;color:#555;margin-top:6px'>State Bonus</div>
+<div style='font-size:1.1rem;font-weight:600;color:#2e7d32'>+₹{bonus:.2f}/kg</div>
+<div style='font-size:0.82rem;color:#555;margin-top:6px'>Effective Floor</div>
+<div style='font-size:1.2rem;font-weight:700;color:#1b5e20'>₹{msp+bonus:.2f}/kg</div>
+<div style='font-size:0.78rem;color:#777;margin-top:4px'>Procurement: {proc_pct:.0f}% of produce</div>
+</div>""", unsafe_allow_html=True)
+            else:
+                st.info("No MSP for this crop — market price only")
+
+        with cp2:
+            st.markdown("**🎁 Subsidies & Insurance**")
+            st.markdown(f"""
+<div style='background:#e3f2fd;border-radius:8px;padding:12px;'>
+<div style='font-size:0.82rem;color:#555'>PM-KISAN + State Scheme</div>
+<div style='font-size:1.2rem;font-weight:700;color:#0d47a1'>+₹{subsidy:,.0f}/ha</div>
+<div style='font-size:0.82rem;color:#555;margin-top:6px'>Power Subsidy</div>
+<div style='font-size:1.1rem;font-weight:600;color:#1565c0'>+₹{power_sub:,.0f}/ha</div>
+<div style='font-size:0.82rem;color:#555;margin-top:6px'>PMFBY Premium (deducted)</div>
+<div style='font-size:1.1rem;font-weight:600;color:#c62828'>-₹{ins_cost:,.0f}/ha</div>
+</div>""", unsafe_allow_html=True)
+
+        with cp3:
+            st.markdown("**📊 Policy Impact**")
+            delta = profit_with_policy - profit_without_policy
+            delta_pct = (delta / profit_without_policy * 100) if profit_without_policy > 0 else 0
+            delta_color = "#2e7d32" if delta >= 0 else "#c62828"
+            arrow = "▲" if delta >= 0 else "▼"
+            st.markdown(f"""
+<div style='background:#fff8e1;border-radius:8px;padding:12px;'>
+<div style='font-size:0.82rem;color:#555'>Without policy</div>
+<div style='font-size:1.1rem;font-weight:600;color:#555'>₹{profit_without_policy:,.0f}/ha</div>
+<div style='font-size:0.82rem;color:#555;margin-top:6px'>With policy</div>
+<div style='font-size:1.2rem;font-weight:700;color:#1b5e20'>₹{profit_with_policy:,.0f}/ha</div>
+<div style='font-size:1.0rem;font-weight:700;color:{delta_color};margin-top:6px'>
+{arrow} ₹{abs(delta):,.0f}/ha ({delta_pct:+.1f}%)</div>
+<div style='font-size:0.75rem;color:#777;margin-top:4px'>Policy contribution</div>
+</div>""", unsafe_allow_html=True)
+
+        if policy_note_txt:
+            st.caption(f"📌 {policy_note_txt}")
+
+        # Policy profit breakdown bar chart
+        st.markdown("**Profit Decomposition**")
+        fig_pol, ax_pol = plt.subplots(figsize=(8, 2.2))
+        components = []
+        values     = []
+        colors_pol = []
+
+        if base_rev > 0:
+            components.append("Base Revenue\n(yield × market price)")
+            values.append(base_rev)
+            colors_pol.append("#52b788")
+        if msp_uplift > 0:
+            components.append(f"MSP Uplift\n(+{proc_pct:.0f}% at floor)")
+            values.append(msp_uplift)
+            colors_pol.append("#2d6a4f")
+        if subsidy > 0:
+            components.append("Subsidies\n(PM-KISAN + state)")
+            values.append(subsidy)
+            colors_pol.append("#74c69d")
+        if power_sub > 0:
+            components.append("Power Subsidy")
+            values.append(power_sub)
+            colors_pol.append("#95d5b2")
+        components.append("Input Costs\n(deducted)")
+        values.append(-input_cost)
+        colors_pol.append("#e63946")
+        if ins_cost > 0:
+            components.append("Insurance\n(deducted)")
+            values.append(-ins_cost)
+            colors_pol.append("#ff6b6b")
+
+        bar_colors = [c if v >= 0 else c for c, v in zip(colors_pol, values)]
+        bars_pol = ax_pol.barh(components[::-1], values[::-1],
+                               color=bar_colors[::-1], alpha=0.85, height=0.5)
+        ax_pol.axvline(0, color="#333", linewidth=0.8)
+        ax_pol.set_xlabel("₹/ha")
+        ax_pol.set_title(f"Profit Breakdown for {crop.title()}", fontsize=11, fontweight="bold")
+        ax_pol.spines["top"].set_visible(False)
+        ax_pol.spines["right"].set_visible(False)
+        ax_pol.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f"₹{x/1000:.0f}K"))
+        fig_pol.tight_layout()
+        st.pyplot(fig_pol)
+        plt.close()
+
+        # Policy comparison for top 3 crops
+        with st.expander("📋 Policy Details — Top 3 Crops Compared", expanded=False):
+            top3_crops = result.get("top_3_crops", []) or []
+            pol_rows = []
+            for tc in top3_crops:
+                tp = pol_details.get(tc, {}) or {}
+                pol_rows.append({
+                    "Crop":                tc.title(),
+                    "MSP (₹/kg)":         f"₹{tp.get('msp_per_kg',0):.2f}",
+                    "State Bonus (₹/kg)":  f"₹{tp.get('state_bonus_per_kg',0):.2f}",
+                    "Procurement %":       f"{tp.get('procurement_efficiency_pct',0):.0f}%",
+                    "Subsidy (₹/ha)":      f"₹{tp.get('subsidy_per_ha_per_season',0):,.0f}",
+                    "PMFBY Premium":       f"{tp.get('insurance_premium_pct',0)*100:.1f}%",
+                    "Power Subsidy (₹/ha)": f"₹{tp.get('power_subsidy_per_ha',0):,.0f}",
+                    "Policy Note":         str(tp.get('policy_note', '—'))[:80],
+                })
+            if pol_rows:
+                st.dataframe(pd.DataFrame(pol_rows), hide_index=True, use_container_width=True)
+
+    else:
+        st.info("Policy details not available for this run.")
+
+    # ── Raw State Debug ────────────────────────────────────────────────────────
     with st.expander("🔧 Debug: Full Agent State"):
         import json
         debug_state = {k: v for k, v in result.items() if k != "policy_note"}

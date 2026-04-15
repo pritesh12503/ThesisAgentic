@@ -106,6 +106,7 @@ def run_crop_advisor(
         "shap_values":            None,
         "agro_top_crops":         None,
         "agro_reasoning":         None,
+        "lime_summary":           None,
         "economic_scores":        None,
         "yield_predictions":      None,
         "price_predictions":      None,
