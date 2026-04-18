@@ -361,8 +361,13 @@ else:
     st.subheader("🔍 SHAP Feature Importance")
     shap_vals = result.get("shap_values", {})\
 
-    if shap_vals and crop in shap_vals:
-        crop_shap = shap_vals[crop]
+    # If recommended crop is not in model's known crops,
+    # use the nearest available model crop's SHAP as proxy
+    shap_crop = crop if crop in shap_vals else next(
+        (c for c in top_crops if c in shap_vals), None
+    )
+    if shap_vals and shap_crop:
+        crop_shap = shap_vals[shap_crop]
         sorted_feats = sorted(crop_shap.items(), key=lambda x: abs(x[1]), reverse=True)[:7]
         feat_names = [AGRO_FEATURE_LABELS.get(f, f) for f, _ in sorted_feats]
         feat_vals  = [v for _, v in sorted_feats]
@@ -373,7 +378,10 @@ else:
         bars = ax2.barh(feat_names[::-1], feat_vals[::-1], color=colors[::-1], alpha=0.85)
         ax2.axvline(0, color="#333", linewidth=0.8, linestyle="--")
         ax2.set_xlabel("SHAP Value (impact on model output)", fontsize=10)
-        ax2.set_title(f"Feature drivers for {crop.title()} recommendation", fontsize=12, fontweight="bold")
+        title = f"Feature drivers for {crop.title()} recommendation"
+        if shap_crop and shap_crop != crop:
+            title += f" (SHAP proxy: {shap_crop})"
+        ax2.set_title(title, fontsize=12, fontweight="bold")
         ax2.spines["top"].set_visible(False)
         ax2.spines["right"].set_visible(False)
 
