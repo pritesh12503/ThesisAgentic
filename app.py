@@ -385,15 +385,12 @@ else:
         st.pyplot(fig2)
         plt.close()
 
-        # LIME validation — compact text, no extra chart
-        lime_summary = result.get("lime_summary", "")
-        if lime_summary:
-            with st.expander("🧪 LIME Validation (cross-check of SHAP)", expanded=False):
-                st.caption(
-                    "LIME (Local Interpretable Model-agnostic Explanations) independently "
-                    "explains this single prediction. Consistent direction with SHAP = reliable explanation."
-                )
-                st.code(lime_summary, language=None)
+        # SHAP text summary
+        shap_text_summary = result.get("lime_summary", "")
+        if shap_text_summary:
+                with st.expander("📝 SHAP Text Summary", expanded=False):
+                    st.caption("Top 5 soil and climate features driving this recommendation.")
+                    st.code(shap_text_summary, language=None)
     else:
         st.info("SHAP values not available for this run.")
 
