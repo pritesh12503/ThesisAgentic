@@ -363,9 +363,12 @@ else:
 
     # If recommended crop is not in model's known crops,
     # use the nearest available model crop's SHAP as proxy
-    shap_crop = crop if crop in shap_vals else next(
-        (c for c in top_crops if c in shap_vals), None
-    )
+    shap_crop = None
+
+    if crop in shap_vals:
+        shap_crop = crop
+    elif top3:
+        shap_crop = next((c for c in top3 if c in shap_vals), None)
     if shap_vals and shap_crop:
         crop_shap = shap_vals[shap_crop]
         sorted_feats = sorted(crop_shap.items(), key=lambda x: abs(x[1]), reverse=True)[:7]
